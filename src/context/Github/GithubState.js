@@ -97,6 +97,7 @@ const GithubState = (props) => {
     dispatch({
       type: LOGOUT_USER,
     });
+    showAlert("Logged Out!", "success");
   };
 
   const setForks = async () => {

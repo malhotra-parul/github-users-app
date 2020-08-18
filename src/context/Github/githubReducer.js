@@ -27,9 +27,9 @@ export default (state, action) => {
       localStorage.clear();
       return {
         ...state,
-        isLoggedIn: action.payload.isLoggedIn,
-        currentUser: action.payload.currentUser,
-        token: action.payload.token,
+        isLoggedIn: false,
+        currentUser: null,
+        token: null,
         loading: false,
       };
     case SET_LOADING:
