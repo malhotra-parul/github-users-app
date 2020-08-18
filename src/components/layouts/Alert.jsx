@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
-import AuthContext from "../../store/context";
+import GithubContext from "../../context/Github/githubContext";
 
 const Alert = ()=>{
-    const authContext = useContext(AuthContext);
-    const { alert } = authContext;
+    const githubContext = useContext(GithubContext);
+    const { alert } = githubContext;
     
     return(
         alert !== null && (
