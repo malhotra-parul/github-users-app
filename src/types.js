@@ -4,3 +4,6 @@ export const SET_LOADING = "SET_LOADING";
 export const SHOW_ALERT = "SET_ALERT";
 export const REMOVE_ALERT = "REMOVE_ALERT";
 export const SET_FORKS = "SET_FORKS";
+export const SET_USERS = "SET_USERS";
+export const FOLLOW_USER = "FOLLOW_USER";
+export const SET_DISABLED = "SET_DISABLED";

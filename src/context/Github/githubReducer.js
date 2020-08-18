@@ -5,6 +5,8 @@ import {
   SHOW_ALERT,
   REMOVE_ALERT,
   SET_FORKS,
+  SET_USERS,
+  SET_DISABLED
 } from "../../types";
 
 export default (state, action) => {
@@ -55,6 +57,17 @@ export default (state, action) => {
         forks: action.payload.forks,
         loading: false,
       };
+    case SET_USERS:
+      return {
+        ...state,
+        users: action.payload.users,
+        loading: false,
+      }
+    case SET_DISABLED:
+      return {
+        ...state,
+        disabled: action.payload.disabled
+      }
     default:
       return state;
   }

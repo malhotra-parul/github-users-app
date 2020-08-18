@@ -8,7 +8,10 @@ import {
   SET_LOADING,
   SHOW_ALERT,
   REMOVE_ALERT,
-  SET_FORKS
+  SET_FORKS,
+  SET_USERS,
+  FOLLOW_USER,
+  SET_DISABLED
 } from "../../types";
 
 const GithubState = (props) => {
@@ -18,7 +21,9 @@ const GithubState = (props) => {
     token: JSON.parse(localStorage.getItem("token")) || null,
     loading: false,
     alert: null,
+    disabled: false,
     forks: 0,
+    users: [],
     client_id: process.env.REACT_APP_CLIENT_ID,
     redirect_uri: process.env.REACT_APP_REDIRECT_URI,
     client_secret: process.env.REACT_APP_CLIENT_SECRET,
@@ -32,6 +37,13 @@ const GithubState = (props) => {
       type: SET_LOADING,
     });
   };
+
+  const setDisabled = (value) =>{
+    dispatch({
+      type: SET_DISABLED,
+      payload: { disabled: value }
+    })
+  }
 
   const showAlert = (msg, type) => {
     dispatch({
@@ -100,11 +112,33 @@ const GithubState = (props) => {
     showAlert("Logged Out!", "success");
   };
 
+  const followUser = async (user) => {
+    setDisabled(true);
+     await axios.put(`https://api.github.com/user/following/${user}`, {}, {
+                     headers: { authorization: `token ${state.token}`, 'Content-Length': 0 }});
+      dispatch({
+        type: FOLLOW_USER,
+      });
+      showAlert(`Followed ${user}!`, "success");
+      setDisabled(false);
+  }
+
+  const fetchUsers = async(itemsPerPage, page) => {
+    setLoading();
+    const response = await axios.get(`https://api.github.com/repos/facebook/react/forks?per_page=${itemsPerPage}&page=${page}`, 
+    { headers: { authorization: `token ${state.token}` } });
+    dispatch({
+      type: SET_USERS,
+      payload: {
+        users: response.data
+      }
+    });
+  };
+
   const setForks = async () => {
     setLoading();
     const res = await axios.get("https://api.github.com/repos/facebook/react", 
     { authorization: `token: ${state.token}`});
-    console.log(res.data.forks_count);
     dispatch({
         type: SET_FORKS,
         payload: { forks: res.data.forks_count}
@@ -113,7 +147,7 @@ const GithubState = (props) => {
 
   return (
     <GithubContext.Provider
-      value={{ ...state, logoutUser, loginUser, setLoading, showAlert, setForks }}
+      value={{ ...state, logoutUser, loginUser, setLoading, showAlert, setForks, fetchUsers, followUser, setDisabled }}
     >
       {props.children}
     </GithubContext.Provider>

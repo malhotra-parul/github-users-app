@@ -31,7 +31,80 @@ a:hover {
 }
 
 ul {
-  list-style: none;
+  list-style-type: none;
+}
+
+ul > li{
+  list-style-type: none;
+}
+
+.card {
+  padding: 1rem;
+  border: #e7f5fd 1px solid;
+  border-radius: 0.5em;
+  margin: 0.7rem 0;
+  display: grid;
+  grid-template: 1fr 1em 2em 1.5em / 1fr ;
+  grid-gap: 0.8em;
+  -webkit-box-shadow: -1px 7px 10px 1px rgba(253,187,45,0.39); 
+  box-shadow: -1px 7px 7px 1px rgba(253,187,45,0.39);
+}
+
+.card > img{
+  width: 60%;
+  border-radius: 50%;
+}
+
+.card-img{
+  grid-row: 1;
+  align-self: center;
+  justify-self: center;
+  border: #e7f5fd 1px solid;
+  filter: drop-shadow(0 0 0.40rem #e7f5fd );
+}
+.card-h1{
+  grid-row: 2;
+  align-self: center;
+  justify-self: center;
+  background-color: var(--warning-color) ;
+  padding: 0 10px;
+  filter: drop-shadow(0 0 0.10rem var(--warning-color) );
+}
+
+.disabled{
+  cursor:not-allowed;
+  pointer-events: none;
+  opacity: 0.1;
+}
+
+.card-follow{
+  grid-row: 3;
+  align-self: center;
+  justify-self: center;
+  filter: drop-shadow(0 0 0.15rem var(--warning-color) );
+}
+
+.card-follow:hover{
+  color: var(--dark-color);
+  background: var(--light-color);
+}
+
+.card-follow:focus{
+  outline: none;
+}
+
+.card-repo{
+  grid-row: 4;
+  align-self: center;
+  justify-self: center;
+  filter: drop-shadow(0 0 0.10rem var(--warning-color) );
+}
+
+.card-repo > button {
+  padding: 0.3em 1.3em;
+  color: var(--dark-color);
+  background: var(--light-color);
+  border-radius: 0.5em;
 }
 
 img {
@@ -92,7 +165,7 @@ img {
   margin-right: 0.5rem;
   transition: opacity 0.2s ease-in;
   outline: none;
-  border-radius: 1em;
+  border-radius: .5em;
 }
 
 .btn:hover{
@@ -120,8 +193,12 @@ img {
 
 .btn-sm {
   font-size: 0.8rem;
-  padding: 0.3rem 1rem;
+  padding: 0.3rem 1.5rem;
   margin-right: 0.2rem;
+  background: var(--dark-color);
+  color: var(--light-color);
+  border-radius: 0.5em;
+  font-size: 1em;
 }
 
 .h2-about{
@@ -172,6 +249,12 @@ img {
   margin: auto;
   overflow: hidden;
   padding: 0 2rem;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
 }
 
 .navbar {
