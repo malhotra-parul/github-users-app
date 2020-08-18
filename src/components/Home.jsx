@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, Fragment, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Spinner from "./layouts/Spinner";
 import GithubContext from "../context/Github/githubContext";
 import { Redirect } from "react-router-dom";

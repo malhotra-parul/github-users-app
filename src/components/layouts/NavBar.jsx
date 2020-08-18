@@ -15,9 +15,12 @@ const NavBar = ({ icon, title }) => {
         </a>
       </h1>
       <ul>
-        <li>
+        { !isLoggedIn &&<li>
+          <Link to="/login">Login</Link>
+        </li>}
+        { isLoggedIn &&<li>
           <Link to="/">Home</Link>
-        </li>
+        </li>}
         <li>
           <Link to="/about">About</Link>
         </li>
