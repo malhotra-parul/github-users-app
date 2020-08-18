@@ -55,7 +55,7 @@ const GithubState = (props) => {
       dispatch({
         type: REMOVE_ALERT,
       });
-    }, 3000);
+    }, 1500);
   };
 
   const loginUser = (proxy_url, requestData) => {
@@ -92,7 +92,7 @@ const GithubState = (props) => {
         dispatch({
           type: LOGIN_USER,
           payload: {
-            currentUser: userDetails.login,
+            currentUser: userDetails,
             isLoggedIn: true,
             token: data.token,
           },

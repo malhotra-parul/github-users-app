@@ -297,11 +297,16 @@ footer{
   padding: 1.7rem 2.5rem;
 }
 
+.pagination{
+  padding: 2em 0;
+}
+
 .footer-p{
   color: var(--light-color);
   margin-left: 0.6rem;
   margin-right: 0.6rem;
 }
+
 
 
 @media (max-width: 700px) {
@@ -313,6 +318,10 @@ footer{
   .navbar ul {
     text-align: center;
     justify-content: center;
+  }
+
+  .grid-3 {
+    grid-template-columns: 1fr;
   }
 
 }
