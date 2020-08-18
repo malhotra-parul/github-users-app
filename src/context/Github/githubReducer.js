@@ -15,7 +15,7 @@ export default (state, action) => {
         JSON.stringify(action.payload.isLoggedIn)
       );
       localStorage.setItem("token", JSON.stringify(action.payload.token));
-      localStorage.setItem("currentUser", JSON.stringify(action.payload.user));
+      localStorage.setItem("currentUser", JSON.stringify(action.payload.currentUser));
       return {
         ...state,
         isLoggedIn: action.payload.isLoggedIn,

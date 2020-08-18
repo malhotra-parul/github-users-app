@@ -6,7 +6,7 @@ const Footer = () => {
         <p className="footer-p">© Parul Malhotra</p>
         <p >
           <a className="footer-p" href="https://github.com/malhotra-parul/github-users-app">
-            <i class="fab fa-github fa-2x" />{" "}: Github Repo
+            <i className="fab fa-github fa-2x" />{" "}: Github Repo
           </a>
         </p>
       </footer>

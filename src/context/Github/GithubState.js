@@ -55,14 +55,37 @@ const GithubState = (props) => {
     })
       .then((response) => response.json())
       .then((data) => {
+        const { avatar_url,
+                bio,
+              blog,
+              email,
+              followers,
+              following,
+              location,
+              name,
+              login,
+            } = data.response;
+
+        const userDetails = {
+          avatar_url,
+          bio,
+          blog,
+          email,
+          followers,
+          following,
+          location,
+          name,
+          login,
+        }
         dispatch({
           type: LOGIN_USER,
           payload: {
-            currentUser: data.response,
+            currentUser: userDetails.login,
             isLoggedIn: true,
             token: data.token,
           },
         });
+  
         showAlert("Login successfull!", "success");
       })
       .catch((error) => {
