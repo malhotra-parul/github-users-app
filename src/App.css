@@ -4,7 +4,7 @@
   --light-color: #f4f4f4;
   --danger-color: #dc3545;
   --success-color: #28a745;
-  --warning-color: rgb(253,187,45);
+  --warning-color: #fdbb2d;
 }
 
 * {
@@ -36,6 +36,17 @@ ul {
 
 img {
   width: 100%;
+}
+
+.img-about{
+  width: 450px;
+}
+
+.about{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .text-center {

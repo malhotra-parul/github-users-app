@@ -3,7 +3,7 @@ import Spinner from "./layouts/Spinner";
 import { Redirect } from "react-router-dom";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import GithubContext from "../context/Github/githubContext";
-import { makeStyles } from "@material-ui/core/styles";
+import loginImg from "./assets/undraw_followers_4i0p.png"
 
 const Login = () => {
   const githubContext = useContext(GithubContext);
@@ -35,14 +35,10 @@ const Login = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  return isLoggedIn ? <Redirect to="/" /> : (
-    <div className="login-wrapper">
+  return loading ? <Spinner />  : ( isLoggedIn ? <Redirect to="/" /> : (
+    <div className="about">
     <h2 className="h2-about">Github Users</h2>
-    
-        {
-            loading ? (
-               <Spinner />
-            ) : (
+    <img src={loginImg} alt="login img" className="img-about"></img>
               <section className="login-container">
                 <a className="btn display"
                 href={`https://github.com/login/oauth/authorize?scope=user&client_id=${client_id}&redirect_uri=${redirect_uri}`}>
@@ -50,10 +46,8 @@ const Login = () => {
                     <span>Login To Github</span>
                 </a>
                 </section>
-            )
-        }
 </div>
-  );
+  ))
 };
 
 export default Login;
