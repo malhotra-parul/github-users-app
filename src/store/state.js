@@ -10,6 +10,7 @@ const AuthState = ( props ) => {
         isLoggedIn: JSON.parse(localStorage.getItem("isLoggedIn")) || false,
         token: JSON.parse(localStorage.getItem("token")) || null,
         loading: false,
+        alert: null,
         client_id: process.env.REACT_APP_CLIENT_ID,
         redirect_uri: process.env.REACT_APP_REDIRECT_URI,
         client_secret: process.env.REACT_APP_CLIENT_SECRET,
