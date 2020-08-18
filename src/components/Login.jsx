@@ -37,20 +37,21 @@ const Login = () => {
 
   return isLoggedIn ? <Redirect to="/" /> : (
     <div className="login-wrapper">
-    <h2>Github Users</h2>
-    <div className="login-container">
+    <h2 className="h2-about">Github Users</h2>
+    
         {
             loading ? (
                <Spinner />
             ) : (
-                <a className="login-link"
+              <section className="login-container">
+                <a className="btn display"
                 href={`https://github.com/login/oauth/authorize?scope=user&client_id=${client_id}&redirect_uri=${redirect_uri}`}>
-                    <GitHubIcon />
+                    <span style={{paddingRight: '1em'}}><GitHubIcon /></span>
                     <span>Login To Github</span>
                 </a>
+                </section>
             )
         }
-    </div>
 </div>
   );
 };
