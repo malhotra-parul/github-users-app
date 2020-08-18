@@ -63,6 +63,7 @@ const GithubState = (props) => {
             token: data.token,
           },
         });
+        showAlert("Login successfull!", "success");
       })
       .catch((error) => {
         showAlert("Login failure!", "danger");

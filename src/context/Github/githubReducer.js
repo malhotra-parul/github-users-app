@@ -18,7 +18,7 @@ export default (state, action) => {
       localStorage.setItem("currentUser", JSON.stringify(action.payload.user));
       return {
         ...state,
-        LoggedIn: action.payload.isLoggedIn,
+        isLoggedIn: action.payload.isLoggedIn,
         currentUser: action.payload.currentUser,
         token: action.payload.token,
         loading: false,
