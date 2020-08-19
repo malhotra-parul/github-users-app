@@ -20,6 +20,7 @@ const Home = () => {
   const itemsPerPage = 9;
   const count = Math.ceil(numberOfForks / itemsPerPage);
   const [page, setPage] = useState(1);
+  const [currentCard, setCurrentCard] = useState(null);
 
   const handlePageChange = (value) => {
     setPage(value);
@@ -53,8 +54,9 @@ const Home = () => {
               <h3 className="card-h1">{user.owner.login}</h3>
               <button
                 disabled={disabled}
-                className={`card-follow btn-sm ${disabled ? "disabled" : ""}`}
+                className={`card-follow btn-sm ${currentCard === user.owner.login ? "disabled" : ""}`}
                 onClick={() => {
+                  setCurrentCard(user.owner.login);
                   followUser(user.owner.login);
                 }}
               >

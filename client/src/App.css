@@ -75,6 +75,9 @@ ul > li{
   cursor:not-allowed;
   pointer-events: none;
   opacity: 0.1;
+  background-color: gray;
+  border: none;
+  color: darkgrey;
 }
 
 .card-follow{

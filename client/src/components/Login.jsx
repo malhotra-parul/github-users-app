@@ -35,19 +35,25 @@ const Login = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  return loading ? <Spinner />  : ( isLoggedIn ? <Redirect to="/" /> : (
+  if(isLoggedIn){
+    return <Redirect to="/" />
+  }
+
+  return (
     <div className="about">
     <h2 className="h2-about">Github Users</h2>
     <img src={loginImg} alt="login img" className="img-about"></img>
               <section className="login-container">
+                { loading ? <Spinner style={{width: "100px"}}/> :
                 <a className="btn display"
                 href={`https://github.com/login/oauth/authorize?scope=user&client_id=${client_id}&redirect_uri=${redirect_uri}`}>
                     <span style={{paddingRight: '1em'}}><GitHubIcon /></span>
                     <span>Login To Github</span>
                 </a>
+}
                 </section>
 </div>
-  ))
+  )
 };
 
 export default Login;

@@ -115,7 +115,7 @@ const GithubState = (props) => {
   const followUser = async (user) => {
     setDisabled(true);
      await axios.put(`https://api.github.com/user/following/${user}`, {}, {
-                     headers: { authorization: `token ${state.token}`, 'Content-Length': 0 }});
+                     headers: { authorization: `token ${state.token}` }});
       dispatch({
         type: FOLLOW_USER,
       });

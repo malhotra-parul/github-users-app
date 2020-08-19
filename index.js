@@ -53,7 +53,7 @@ app.post("/authenticate", (req, res) => {
 
 
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.SERVER_PORT || 5000;
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));
