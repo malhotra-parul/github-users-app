@@ -1,6 +1,8 @@
 # Github Users App
 A side project app where users can login using their Github credentials and follow other people.
 
+![Demo](https://media.giphy.com/media/ekqci9zOK2gpDwpJJ6/giphy.gif)
+
 ## Features
 - Login with Github using Oauth
 - Fetch last 200 users who have forked Facebook's React repo
