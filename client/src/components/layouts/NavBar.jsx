@@ -9,7 +9,7 @@ const NavBar = ({ icon, title }) => {
   return (
     <nav className="navbar bg-primary">
       <h1>
-        <a href="/">
+        <a href={ isLoggedIn ? "/" : "/login" }>
           {" "}
           <i className={icon} /> {title}
         </a>

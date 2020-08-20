@@ -23,8 +23,9 @@ const Home = () => {
   const [currentCard, setCurrentCard] = useState(null);
 
   const handlePageChange = (value) => {
-    setPage(value);
     setLoading();
+    setPage(value);
+    
   };
 
   useEffect(() => {
