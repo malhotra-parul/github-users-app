@@ -63,8 +63,8 @@ const Home = () => {
               >
                 FOLLOW
               </button>
-              <a href={user.owner.repos_url} className="card-repo">
-                <button>Repositories</button>
+              <a href={`https://github.com/${user.owner.login}`} className="card-repo">
+                <button className="repo-btn" >Github Profile</button>
               </a>
             </li>
           ))}

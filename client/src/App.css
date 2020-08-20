@@ -24,6 +24,11 @@ body {
 a {
   color: var(--primary-color);
   text-decoration: none;
+  cursor: pointer;
+}
+
+a > button {
+  cursor: pointer;
 }
 
 a:hover {
@@ -85,6 +90,7 @@ ul > li{
   align-self: center;
   justify-self: center;
   filter: drop-shadow(0 0 0.15rem var(--warning-color) );
+  cursor: pointer;
 }
 
 .card-follow:hover{
@@ -180,6 +186,7 @@ img {
   background: none;
   padding: 0;
   margin: 0;
+  cursor: pointer;
 }
 
 .login-wrapper{
@@ -258,6 +265,11 @@ img {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 1rem;
+}
+
+.repo-btn:hover {
+  color: var(--light-color);
+  background: var(--dark-color);
 }
 
 .navbar {
