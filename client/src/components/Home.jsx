@@ -25,7 +25,7 @@ const Home = () => {
   const handlePageChange = (value) => {
     setLoading();
     setPage(value);
-    
+    window.scrollTo({ top: 0, behavior: "smooth"});
   };
 
   useEffect(() => {
