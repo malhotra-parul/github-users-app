@@ -10,6 +10,7 @@
     "heroku-postbuild": "npm run install-client && npm run build",
     "start": "node index.js",
     "client": "cd client && npm start",
+    "deploy" : "now --public",
     "dev": "concurrently -n 'server,client' -c 'red,green'  \"node index.js\" \"npm run client\""
   },
   "keywords": [],
@@ -21,6 +22,7 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "form-data": "^3.0.0",
-    "node-fetch": "^2.6.0"
+    "node-fetch": "^2.6.0",
+    "path": "^0.12.7"
   }
 }

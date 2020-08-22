@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/static/css/main.24a8297c.chunk.css",
+    "main.js": "/static/js/main.ff2c8aeb.chunk.js",
+    "main.js.map": "/static/js/main.ff2c8aeb.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.0508977f.js",
+    "runtime-main.js.map": "/static/js/runtime-main.0508977f.js.map",
+    "static/js/2.2b2a9536.chunk.js": "/static/js/2.2b2a9536.chunk.js",
+    "static/js/2.2b2a9536.chunk.js.map": "/static/js/2.2b2a9536.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.3a270707dddaad30f2ffdc619deed480.js": "/precache-manifest.3a270707dddaad30f2ffdc619deed480.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.24a8297c.chunk.css.map": "/static/css/main.24a8297c.chunk.css.map",
+    "static/js/2.2b2a9536.chunk.js.LICENSE.txt": "/static/js/2.2b2a9536.chunk.js.LICENSE.txt",
+    "static/media/spinner.gif": "/static/media/spinner.f6d9fc27.gif",
+    "static/media/undraw_about_us_page_ee1k.png": "/static/media/undraw_about_us_page_ee1k.c9f4e1df.png",
+    "static/media/undraw_followers_4i0p.png": "/static/media/undraw_followers_4i0p.d3b8fe5b.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.0508977f.js",
+    "static/js/2.2b2a9536.chunk.js",
+    "static/css/main.24a8297c.chunk.css",
+    "static/js/main.ff2c8aeb.chunk.js"
+  ]
+}
