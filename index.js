@@ -22,6 +22,11 @@ app.use((req, res, next) => {
 });
 
 let tokenKey;
+
+app.get("/abc", (req, res) => {
+  return res.send("Express! working.");
+})
+
 app.post("/authenticate", (req, res) => {
   const { client_id, redirect_uri, client_secret, code } = req.body;
 
@@ -56,7 +61,12 @@ app.post("/authenticate", (req, res) => {
     });
 });
 
-
+if (process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'staging') {
+  app.use(express.static('client/build'));
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname + '/client/build/index.html'));
+  });
+}
 
 const PORT = process.env.SERVER_PORT || 5000;
 
