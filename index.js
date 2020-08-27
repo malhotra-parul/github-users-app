@@ -61,12 +61,16 @@ app.post("/authenticate", (req, res) => {
     });
 });
 
+<<<<<<< HEAD
 if (process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'staging') {
   app.use(express.static('client/build'));
   app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname + '/client/build/index.html'));
   });
 }
+=======
+
+>>>>>>> ce2be5e5cbc1c2058c04be1ef0585ed0f1fcf5f8
 
 const PORT = process.env.SERVER_PORT || 5000;
 
