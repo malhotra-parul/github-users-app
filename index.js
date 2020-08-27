@@ -3,6 +3,7 @@ const bodyParser = require("body-parser");
 const FormData = require("form-data");
 const fetch = require("node-fetch");
 const cors = require('cors');
+const path = require("path");
 
 const app = express();
 
@@ -10,6 +11,10 @@ app.use(bodyParser.json());
 app.use(cors());
 app.use(bodyParser.json({ type: "text/*" }));
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.static(path.resolve(__dirname, "client", "build")));
+app.get("/", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+}); 
 
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
@@ -54,9 +59,5 @@ app.post("/authenticate", (req, res) => {
 
 
 const PORT = process.env.SERVER_PORT || 5000;
-
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static('client/build'));
-}
 
 app.listen(PORT, () => console.log(`Listening on ${PORT}`));
